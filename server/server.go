@@ -103,6 +103,7 @@ func NewServer(cfg *Config) (*Server, error) {
 	return s, nil
 }
 
+// TODO: wtf NewServer vs CreateServer
 // CreateServer creates the UNINITIALIZED pd server with given configuration.
 func CreateServer(cfg *Config) *Server {
 	log.Infof("PD config - %v", cfg)
@@ -119,6 +120,7 @@ func CreateServer(cfg *Config) *Server {
 	return s
 }
 
+// TODO: function too long
 // StartEtcd starts an embed etcd server with an user handler.
 func (s *Server) StartEtcd(apiHandler http.Handler) error {
 	etcdCfg, err := s.cfg.genEmbedEtcdConfig()

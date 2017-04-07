@@ -93,6 +93,7 @@ func (r *Replication) GetDistinctScore(stores []*storeInfo, other *storeInfo) fl
 // Returns 0 if store A is as good as store B.
 // Returns 1 if store A is better than store B.
 // Returns -1 if store B is better than store A.
+// TODO: should use sort.Interface
 func compareStoreScore(storeA *storeInfo, scoreA float64, storeB *storeInfo, scoreB float64) int {
 	// The store with higher score is better.
 	if scoreA > scoreB {
